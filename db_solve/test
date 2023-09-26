@@ -4,3 +4,66 @@ LEFT JOIN ICECREAM_INFO AS b
 ON a.FLAVOR = b.FLAVOR
 WHERE a.TOTAL_ORDER > 3000 AND b.INGREDIENT_TYPE LIKE 'fruit_based'
 ORDER BY a.TOTAL_ORDER DESC;
+
+function fn_CategoryAndFunCaseCheck(type) {
+		if ('${rfxAward.rptUserDp}' == 110011022) { //원부원료팀 체크
+			var checkTemp = []; //선정하려는 물품구매 건의 품목
+			var checkItmNos = ''; //쿼리에서 편하게 처리하기 위해 ','구분자로 품목아이디를 담는 변수
+
+			var emptyCategorys = []; //카테고리 없는 품목 no 채번
+
+			for (var Row = 1; Row <= sheet.Sheet.RowCount(); Row++) {
+				checkTemp[Row - 1] = sheet.Sheet.GetCellValue(Row, "itmNo");
+			}
+			
+			if (sheet.Sheet.RowCount() > 0) {
+				checkItmNos = checkTemp.join(',');
+			} else {
+				checkItmNos = '';
+			}
+
+			$.fng_Ajax({
+		   	 	SvcName: "/buy/god/rfq/checkGreqItmCategory.do",
+		        Params: { param : { checkItmNos : checkItmNos } },
+		        Callback: function (result) {
+		        	for (var i = 0; i < result.length; i++) {
+		        		if (!result[i].WONBU_CATEGORY_ID3) {
+		        			emptyCategorys[i] = result[i].ITM_NO;
+		        		}
+		        	}
+					//지정된 카테고리가 없으면 alert 호출
+		    		if (emptyCategorys != '') {
+		    			alert("TOPS품목코드 " + emptyCategorys + " 의 카테고리가 지정되어있지 않아 진행할 수 없습니다.");
+		    		} else {
+		    			switch (type) { //버튼 종류 마다 type 지정 후 case 문으로 알맞는 함수 호출
+		    			case 1: fn_PhantomOrder(); //가발주
+		    				break;
+		    			case 2: fn_DoSave(); //저장
+	    					break;
+		    			case 3: fn_DoApp(); //결재요청(SCM)
+		    				break;
+		    			case 4: fn_DoAppUndecided(); //확정단가 결재요청
+		    				break;
+		    			case 5: fn_DoSuccess(); //결재요청(프리패스)
+		    				break;
+		    			default: alert("다시 선택해주시길 바랍니다."); //혹시나..
+		    			}
+		    		}
+		        }
+		    });
+		} else {
+			switch (type) { //버튼 종류 마다 type 지정 후 case 문으로 알맞는 함수 호출
+			case 1: fn_PhantomOrder(); //가발주
+				break;
+			case 2: fn_DoSave(); //저장
+				break;
+			case 3: fn_DoApp(); //결재요청(SCM)
+				break;
+			case 4: fn_DoAppUndecided(); //확정단가 결재요청
+				break;
+			case 5: fn_DoSuccess(); //결재요청(프리패스)
+				break;
+			default: alert("다시 선택해주시길 바랍니다."); //혹시나..
+			}
+		}
+	}
