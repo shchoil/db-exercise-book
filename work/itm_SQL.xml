@@ -1,0 +1,1954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="item">
+	<resultMap type="com.syds.tops.itm.vo.ItmMasterVO" id="itmMaster">
+		<result column="ITM_MASTER_SEQ" property="itmMasterSeq"/>
+		<result column="ITM_SEQ" property="itmSeq"/>
+		<result column="COMP_ID" property="compId" jdbcType="NVARCHAR"/>
+		<result column="COMP_CD" property="compCd" jdbcType="NVARCHAR"/>
+		<result column="BP_ID" property="bpId" jdbcType="NVARCHAR"/>
+		<result column="DEPT_ID" property="deptId" jdbcType="NVARCHAR"/>
+		<result column="BU_ID" property="buId" jdbcType="NVARCHAR"/>
+		<result column="FACTORY_ID" property="factoryId" jdbcType="NVARCHAR"/>
+		<result column="ITM_STATE" property="itmState" jdbcType="NVARCHAR"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmVO" id="itm">
+		<result column="ITM_SEQ" property="itmSeq"/>
+		<result column="ITM_MASTER_SEQ" property="itmMasterSeq"/>
+		<result column="ITM_ID" property="itmId" jdbcType="NVARCHAR"/>
+		<result column="ITM_NO" property="itmNo" jdbcType="NVARCHAR"/>
+		<result column="CONST_YN" property="constYn" jdbcType="NVARCHAR"/>
+		<result column="SHORT_ITEM_NO" property="shortItemNo" jdbcType="NVARCHAR"/>
+		<result column="SCND_ITEM_NO" property="scndItemNo" jdbcType="NVARCHAR"/>
+		<result column="THIRD_ITEM_NO" property="thirdItemNo" jdbcType="NVARCHAR"/>
+		<result column="ITM_NM" property="itmNm" jdbcType="NVARCHAR"/>
+		<result column="ITM_NM_ENG" property="itmNmEng" jdbcType="NVARCHAR"/>
+		<result column="CATALOG_NM" property="catalogNm" jdbcType="NVARCHAR"/>
+		<result column="SEARCH_TEXT" property="searchText" jdbcType="NVARCHAR"/>
+		<result column="STOCKING_TYPE" property="stockingType" jdbcType="NVARCHAR"/>
+		<result column="GL_CLASS" property="glClass" jdbcType="NVARCHAR"/>
+		<result column="UOM" property="uom" jdbcType="NVARCHAR"/>
+		<result column="LINE_TYPE" property="lineType" jdbcType="NVARCHAR"/>
+		<result column="BULKPACKED_FG" property="bulkpackedFg" jdbcType="NVARCHAR"/>
+		<result column="USE_YN" property="useYn" jdbcType="NVARCHAR"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmBasicsVO" id="itmBasics">
+		<result column="ITM_SEQ" property="itmSeq"/>
+		<result column="INVENTORY_COST_LV" property="inventoryCostLv" jdbcType="NVARCHAR"/>
+		<result column="SALES_PRICE_LV" property="salesPriceLv" jdbcType="NVARCHAR"/>
+		<result column="PURCHASE_PRICE_LV" property="purchasePriceLv" jdbcType="NVARCHAR"/>
+		<result column="KIT_COFIG_PRICING_MTD" property="kitCofigPricingMtd" jdbcType="NVARCHAR"/>
+		<result column="CONFIG_COSTING_MTD" property="configCostingMtd" jdbcType="NVARCHAR"/>
+		<result column="COMMITMENT_TS" property="commitmentTs" jdbcType="NVARCHAR"/>
+		<result column="PRINT_MSG" property="printMsg" jdbcType="NVARCHAR"/>
+		<result column="ITEM_FLASH_MSG" property="itemFlashMsg" jdbcType="NVARCHAR"/>
+		<result column="STD_UOM_CONVERSION" property="stdUomConversion" jdbcType="NVARCHAR"/>
+		<result column="UNIT_PRICE" property="unitPrice" jdbcType="NUMERIC"/>
+		<result column="ITM_GUBN" property="itmGubn" jdbcType="NVARCHAR"/>
+		<result column="STOR_GUBN" property="storGubn" jdbcType="NVARCHAR"/>
+		<result column="ORG_AREA" property="orgArea" jdbcType="NVARCHAR"/>
+		<result column="MAKER" property="maker" jdbcType="NVARCHAR"/>
+		<result column="PRIMARY_UOM" property="primaryUom" jdbcType="NVARCHAR"/>
+		<result column="CHECK_METHOD" property="checkMethod" jdbcType="NVARCHAR"/>
+		<result column="IO_FLAG" property="ioFlag" jdbcType="NVARCHAR"/>
+		<result column="CURRENCY_ID" property="currencyId" jdbcType="NVARCHAR"/>
+		<result column="COCK_MNG_YN" property="cockMngYn" jdbcType="NVARCHAR"/>
+		<result column="COCK_QTY_MIN" property="cockQtyMin" jdbcType="NUMERIC"/>
+		<result column="COCK_QTY" property="cockQty" jdbcType="NUMERIC"/>
+		<result column="COCK_SET_DT" property="cockSetDt" jdbcType="TIMESTAMP"/>
+		<result column="COCK_DLFRM_CD" property="cockDlfrmCd" jdbcType="NVARCHAR"/>
+		<result column="COCK_TOTAL_STOCK" property="cockTotalStock" jdbcType="NUMERIC"/>
+		<result column="MRO_REG_YN" property="mroRegYn" jdbcType="NVARCHAR"/>
+		<result column="MSDS_MNG_YN" property="msdsMngYn" jdbcType="NVARCHAR"/>
+
+		<result column="SECONDARY_UOM" property="secondaryUom" jdbcType="NVARCHAR"/>
+		<result column="PURCHASING_UOM" property="purchasingUom" jdbcType="NVARCHAR"/>
+		<result column="PRICING_UOM" property="pricingUom" jdbcType="NVARCHAR"/>
+		<result column="SHIPPING_UOM" property="shippingUom" jdbcType="NVARCHAR"/>
+		<result column="PRODUCTION_UOM" property="productionUom" jdbcType="NVARCHAR"/>
+		<result column="COMPONENT_UOM" property="componentUom" jdbcType="NVARCHAR"/>
+		<result column="WEIGHT_UOM" property="weightUom" jdbcType="NVARCHAR"/>
+		<result column="VOLUME_UOM" property="volumeUom" jdbcType="NVARCHAR"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmBranchVO" id="itmBranch">
+		<result column="ITM_BRANCH_SEQ" property="itmBranchSeq"/>
+		<result column="ITM_MASTER_SEQ" property="itmMasterSeq"/>
+		<result column="ITM_SEQ" property="itmSeq"/>
+		<result column="BRANCH_PLANT" property="branchPlant" jdbcType="NVARCHAR"/>
+		<result column="INPUT_EMP_NO" property="inputEmpNo" jdbcType="NVARCHAR"/>
+		<result column="INPUT_EMP_DT" property="inputEmpDt" />
+		<result column="MOD_EMP_NO" property="modEmpNo" jdbcType="NVARCHAR"/>
+		<result column="MOD_DT" property="modDt" />
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmUomVO" id="itmUom">
+		<result column="ITM_UOM_SEQ" property="itmUomSeq"/>
+		<result column="ITM_MASTER_SEQ" property="itmMasterSeq"/>
+		<result column="ITM_SEQ" property="itmSeq"/>
+		<result column="FROM_UOM" property="fromUom" jdbcType="NVARCHAR"/>
+		<result column="TO_UOM" property="toUom" jdbcType="NVARCHAR"/>
+		<result column="CONVERSION_FACTORY" property="conversionFactory" jdbcType="NUMERIC" javaType="java.math.BigDecimal"/>
+		<result column="INPUT_EMP_NO" property="inputEmpNo" jdbcType="NVARCHAR"/>
+		<result column="INPUT_EMP_DT" property="inputEmpDt"/>
+		<result column="MOD_EMP_NO" property="modEmpNo" jdbcType="NVARCHAR"/>
+		<result column="MOD_DT" property="modDt"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmLotVO" id="itmLot">
+		<result column="ITM_MASTER_SEQ" property="itmMasterSeq"/>
+		<result column="ITM_SEQ" property="itmSeq"/>
+		<result column="SERIAL_NO_REQUIRED" property="serialNoRequired" jdbcType="NVARCHAR"/>
+		<result column="LOT_STATUS_CD" property="lotStatusCd" jdbcType="NVARCHAR"/>
+		<result column="LOT_PROCESS_TYPE" property="lotProcessType" jdbcType="NVARCHAR"/>
+		<result column="COMMITMENT_DT_MTD" property="commitmentDtMtd" jdbcType="NVARCHAR"/>
+		<result column="LOT_EXPIRATION_DT_MTD" property="lotExpirationDtMtd" jdbcType="NVARCHAR"/>
+		<result column="SHELF_LIFE_DAYS" property="shelfLifeDays" jdbcType="NVARCHAR"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmLocVO" id="itmLoc">
+		<result column="ITM_LOC_SEQ" property="itmLocSeq"/>
+		<result column="ITM_MASTER_SEQ" property="itmMasterSeq"/>
+		<result column="ITM_SEQ" property="itmSeq"/>
+		<result column="SCND_LOC" property="scndLoc" jdbcType="NVARCHAR"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmCategoryVO" id="itmCategory">
+		<result column="ITM_MASTER_SEQ" property="itmMasterSeq"/>
+		<result column="ITM_SEQ" property="itmSeq"/>
+		<result column="SALES_CATALOG_SECT" property="salesCatalogSect" jdbcType="NVARCHAR"/>
+		<result column="SUB_SECTION" property="subSection" jdbcType="NVARCHAR"/>
+		<result column="SALES_CATEGORY_CD3" property="salesCategoryCd3" jdbcType="NVARCHAR"/>
+		<result column="SALES_CATEGORY_CD4" property="salesCategoryCd4" jdbcType="NVARCHAR"/>
+		<result column="SALES_CATEGORY_CD5" property="salesCategoryCd5" jdbcType="NVARCHAR"/>
+		<result column="PREFERRED_SALES_CARRIER" property="preferredSalesCarrier" jdbcType="NVARCHAR"/>
+		<result column="COMMODITY_CLASS" property="commodityClass" jdbcType="NVARCHAR"/>
+		<result column="COMMODITY_SUB_CLASS" property="commoditySubClass" jdbcType="NVARCHAR"/>
+		<result column="SUPPLIER_REBATE_CODE" property="supplierRebateCode" jdbcType="NVARCHAR"/>
+		<result column="MASTER_PLANNING_FAMILY" property="masterPlanningFamily" jdbcType="NVARCHAR"/>
+		<result column="LANDED_COST_RULE" property="landedCostRule" jdbcType="NVARCHAR"/>
+		<result column="PREFERRED_PURCHASING_CARRIER" property="preferredPurchasingCarrier" jdbcType="NVARCHAR"/>
+		<result column="SHIPPING_CONDITIONS_CODE" property="shippingConditionsCode" jdbcType="NVARCHAR"/>
+		<result column="SHIPPING_COMMODITY_CLASS" property="shippingCommodityClass" jdbcType="NVARCHAR"/>
+		<result column="CYCLE_COUNT_CATEGORY" property="cycleCountCategory" jdbcType="NVARCHAR"/>
+		<result column="ITEM_DIMENSION_GROUP" property="itemDimensionGroup" jdbcType="NVARCHAR"/>
+		<result column="WAREHOUSE_PROCESS_GRP1" property="warehouseProcessGrp1" jdbcType="NVARCHAR"/>
+		<result column="WAREHOUSE_PROCESS_GRP2" property="warehouseProcessGrp2" jdbcType="NVARCHAR"/>
+		<result column="WAREHOUSE_PROCESS_GRP3" property="warehouseProcessGrp3" jdbcType="NVARCHAR"/>
+		<result column="ITEM_POOL_CODE" property="itemPoolCode" jdbcType="NVARCHAR"/>
+		<result column="CATEGORY_CODE6" property="categoryCode6" jdbcType="NVARCHAR"/>
+		<result column="CATEGORY_CODE7" property="categoryCode7" jdbcType="NVARCHAR"/>
+		<result column="CATEGORY_CODE8" property="categoryCode8" jdbcType="NVARCHAR"/>
+		<result column="CATEGORY_CODE9" property="categoryCode9" jdbcType="NVARCHAR"/>
+		<result column="CATEGORY_CODE10" property="categoryCode10" jdbcType="NVARCHAR"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmHistVO" id="itmHist">
+		<result column="ITM_MASTER_SEQ" property="itmMasterSeq"/>
+		<result column="ITM_SEQ" property="itmSeq"/>
+		<result column="SEQ" property="seq"/>
+		<result column="MEMO" property="memo" jdbcType="NVARCHAR"/>
+		<result column="INPUT_EMP_NO" property="inputEmpNo" jdbcType="NVARCHAR"/>
+		<result column="INPUT_EMP_NM" property="inputEmpNm" jdbcType="NVARCHAR"/>
+		<result column="INPUT_EMP_DT" property="inputEmpDt"/>
+		<result column="MOD_EMP_NO" property="modEmpNo" jdbcType="NVARCHAR"/>
+		<result column="MOD_DT" property="modDt"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmUnitPriceVO" id="itmUnitPrice">
+		<result column="UNIT_SEQ" property="unitSeq"/>
+		<result column="ITM_MASTER_SEQ" property="itmMasterSeq"/>
+		<result column="COMP_ID" property="compId" jdbcType="NVARCHAR"/>
+		<result column="BP_ID" property="bpId" jdbcType="NVARCHAR"/>
+		<result column="DEPT_ID" property="deptId" jdbcType="NVARCHAR"/>
+		<result column="BU_ID" property="buId" jdbcType="NVARCHAR"/>
+		<result column="FACTORY_ID" property="factoryId" jdbcType="NVARCHAR"/>
+		<result column="BRANCH_PLANT" property="branchPlant" jdbcType="NVARCHAR"/>
+		<result column="ITM_SEQ" property="itmSeq"/>
+		<result column="UNIT_PRICE_GUBN" property="unitPriceGubn" jdbcType="NVARCHAR"/>
+		<result column="UNIT_PRICE" property="unitPrice" jdbcType="NUMERIC"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmSourcingPdeptVO" id="itmSourcingPdeptMap">
+		<id column="ITM_SOURCING_PDEPT_IDX" property="itmSourcingPdeptIdx"/>
+		<result column="COMP_CD" property="compCd" jdbcType="NCHAR"/>
+		<result column="COMP_NM" property="compNm"/>
+		<result column="BU_CD" property="buCd" jdbcType="NCHAR"/>
+		<result column="BU_NM" property="buNm"/>
+		<result column="CP_CD" property="cpCd"/>
+		<result column="CP_NM" property="cpNm"/>
+		<result column="DP_CD" property="dpCd"/>
+		<result column="DP_NM" property="dpNm"/>
+		<result column="INPUT_EMP_NO" property="inputEmpNo"/>
+		<result column="INPUT_DT" property="inputDt" jdbcType="TIMESTAMP" javaType="string"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmCategoryMappingVO" id="itmCategoryMappingMap">
+		<id column="ITM_MAPPING_IDX" property="itmMappingIdx"/>
+		<result column="ITM_SOURCING_GROUP" property="itmSourcingGroup"/>
+		<result column="ITM_SOURCING_PDEPT_IDX" property="itmSourcingPdeptIdx"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmMappingCategoryVO" id="itmMappingCategoryMap">
+		<id column="ITM_CATEGORY_ID" property="itmCategoryId"/>
+		<result column="ITM_SOURCING_GROUP" property="itmSourcingGroup" jdbcType="NCHAR"/>
+		<result column="CATEGORY_CD" property="categoryCd"/>
+		<result column="CATEGORY_NM" property="categoryNm"/>
+		<result column="CATEGORY_EN_NM" property="categoryEnNm"/>
+		<result column="PARENT_CATEGORY_CD" property="parentCategoryCd"/>
+		<result column="LVL" property="lvl"/>
+		<result column="USE_YN" property="useYn" jdbcType="NCHAR"/>
+		<result column="INPUT_DT" property="inputDt" jdbcType="TIMESTAMP" javaType="string"/>
+		<result column="INPUT_EMP_NO" property="inputEmpNo"/>
+		<result column="MOD_EMP_NO" property="modEmpNo"/>
+		<result column="MOD_DT" property="modDt" jdbcType="TIMESTAMP" javaType="string"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmProfileVO" id="itmProfileMap">
+		<id column="ITM_PROFILE_SEQ_ID" property="itmProfileSeqId"/>
+		<result column="CATEGORY_ID3" property="categoryId3"/>
+		<result column="COMP_CD" property="compCd"/>
+		<result column="COMP_NM" property="compNm"/>
+		<result column="DP_CD" property="dpCd"/>
+		<result column="DP_NM" property="dpNm"/>
+		<result column="MARKET_SCALE" property="marketScale"/>
+		<result column="PRICE_DECIDE" property="priceDecide"/>
+		<result column="BUYER" property="buyer"/>
+		<result column="INPUT_EMP_NO" property="inputEmpNo"/>
+		<result column="INPUT_DT" property="inputDt" jdbcType="TIMESTAMP" javaType="string"/>
+		<result column="MOD_EMP_NO" property="modEmpNo"/>
+		<result column="REMARK" property="remark"/>
+		<result column="MOD_DT" property="modDt" jdbcType="TIMESTAMP" javaType="string"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmMasterFileVO" id="itmMasterFileMap">
+		<id column="MASTER_SEQ" property="masterSeq"/>
+		<result column="ITM_TITLE" property="itmTitle"/>
+		<result column="INPUT_EMP_NO" property="inputEmpNo"/>
+		<result column="INPUT_DT" property="inputDt" jdbcType="TIMESTAMP" javaType="string"/>
+		<result column="MOD_EMP_NO" property="modEmpNo"/>
+		<result column="MOD_DT" property="modDt" jdbcType="TIMESTAMP" javaType="string"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmMasterFileContentVO" id="itmMasterFileContentMap">
+		<id column="SEQ" property="seq"/>
+		<result column="MASTER_SEQ" property="masterSeq"/>
+		<result column="ITM_DESC" property="itmDesc" jdbcType="LONGVARCHAR" javaType="string"/>
+		<result column="INPUT_EMP_NO" property="inputEmpNo"/>
+		<result column="INPUT_DT" property="inputDt" jdbcType="TIMESTAMP" javaType="string"/>
+		<result column="MOD_EMP_NO" property="modEmpNo"/>
+		<result column="MOD_DT" property="modDt" jdbcType="TIMESTAMP" javaType="string"/>
+	</resultMap>
+
+	<resultMap type="com.syds.tops.itm.vo.ItmMasterFileDetailVO" id="itmMasterFileDetailMap">
+		<id column="SEQ" property="seq"/>
+		<result column="MASTER_SEQ" property="masterSeq"/>
+		<result column="SUBJECT" property="subject"/>
+		<result column="CONTENT" property="content" jdbcType="LONGVARCHAR" javaType="string"/>
+		<result column="SUBJECT_FG" property="subjectFg"/>
+		<result column="INPUT_EMP_NO" property="inputEmpNo"/>
+		<result column="INPUT_DT" property="inputDt" jdbcType="TIMESTAMP" javaType="string"/>
+		<result column="MOD_EMP_NO" property="modEmpNo"/>
+		<result column="MOD_DT" property="modDt" jdbcType="TIMESTAMP" javaType="string"/>
+		<result column="MOD_DT" property="modDt" jdbcType="TIMESTAMP" javaType="string"/>
+		<result column="SUBJECT_FG_NM" property="subjectFgNm" />
+		<result column="INPUT_EMP_NM" property="inputEmpNm" />
+	</resultMap>
+
+	<select id="itemList" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_LIST(
+				#{useComp, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{useBu, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{itmGubn, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{itmNm, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{itmNo, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</select>
+
+	<select id="selectItemViewList" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITMVIEW_SELECT(
+				  #{compCd}
+				, #{branchPlant}
+				, #{itmNo}
+				, #{itmNm}
+				, #{erpItmNo}
+				, #{lineType}
+				, #{searchText}
+				, #{stockingType}
+				, #{itmGubn}
+				)
+		}
+	</select>
+
+
+	<select id="selectItemViewOneList" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITMVIEW_ONE_SELECT(
+				  #{compCd}
+				, #{branchPlant}
+				, #{itmNo}
+				, #{itmNm}
+				, #{erpItmNo}
+				, #{lineType}
+				, #{searchText}
+				, #{stockingType}
+				, #{itmGubn}
+				, #{plantCd}
+				, #{rfxType}
+				, #{itmType}
+				)
+		}
+	</select>
+	
+	<select id="selectItemViewOneList2" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITMVIEW_ONE_SELECT2(
+				  #{compCd}
+				, #{branchPlant}
+				, #{itmNo}
+				, #{itmNm}
+				, #{erpItmNo}
+				, #{lineType}
+				, #{searchText}
+				, #{stockingType}
+				, #{itmGubn}
+				, #{plantCd}
+				, #{rfxType}
+				, #{itmType}
+				)
+		}
+	</select>
+
+	<select id="SP_ITM_POPUP_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_POPUP_SELECT(
+				  	 #{compCd}
+					,#{itmNm}
+					,#{itmCd}
+				)
+		}
+	</select>
+
+	<insert id="itemSave" parameterType="hashmap" statementType="CALLABLE">
+		{
+			call SP_ITM_SAVE(
+				#{ITM_ID, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{CONST_YN, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{SHORT_ITEM_NO, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{SCND_ITEM_NO, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{THIRD_ITEM_NO, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{ITM_NM, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{ITM_NM_ENG, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{CATALOG_NM, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{SEARCH_TEXT, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{STOCKING_TYPE, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{GL_CLASS, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{UOM, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{LINE_TYPE, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{BULKPACKED_FG, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{USE_YN, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{EMP_NO, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{COMP_CD, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{BP_ID, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{DEPT_ID, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{BU_ID, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{FACTORY_ID, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{ITM_MASTER_SEQ, mode=IN, jdbcType=INTEGER},
+				#{ITM_SEQ, mode=IN, jdbcType=INTEGER},
+				#{UNIT_PRICE, mode=IN, jdbcType=NUMERIC, javaType=BigDecimal},
+				#{MODE, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{OUT_ITM_MASTER_SEQ, mode=OUT, jdbcType=INTEGER},
+				#{OUT_ITM_SEQ, mode=OUT, jdbcType=INTEGER}
+			)
+		}
+	</insert>
+
+	<select id="itemView" parameterType="hashmap" resultMap="itm" statementType="CALLABLE">
+		{
+			call SP_ITM_VIEW(
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<insert id="itemBasicsSave" parameterType="com.syds.tops.itm.vo.ItmBasicsVO" statementType="CALLABLE">
+		{
+			call SP_ITM_BASICS_SAVE(
+		 		#{itmSeq, mode=IN, jdbcType=INTEGER},
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{inventoryCostLv, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{salesPriceLv, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{purchasePriceLv, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{kitCofigPricingMtd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{configCostingMtd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{commitmentTs, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{printMsg, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{itemFlashMsg, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{stdUomConversion, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{unitPrice, mode=IN, jdbcType=NUMERIC, javaType=BigDecimal},
+				#{itmGubn, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{storGubn, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{orgArea, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{maker, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{primaryUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{checkMethod, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{ioFlag, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{currencyId, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{cockMngYn, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{cockQtyMin, mode=IN, jdbcType=NUMERIC, javaType=BigDecimal},
+				#{cockQty, mode=IN, jdbcType=NUMERIC, javaType=BigDecimal},
+				#{cockSetDt, mode=IN, jdbcType=TIMESTAMP},
+				#{cockDlfrmCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{cockTotalStock, mode=IN, jdbcType=NUMERIC, javaType=BigDecimal},
+				#{mroRegYn, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{mroItmCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{msdsMngYn, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{msdsDocId, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{msdsReceiptYn, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{msdsNotReceiptRsn, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{orderFg, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{crcd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{g2bno, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{unspscCode, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{secondaryUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{purchasingUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{pricingUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{shippingUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{productionUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{componentUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{weightUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{volumeUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{empNo, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{mode, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</insert>
+
+	<select id="itemBasicsView" parameterType="com.syds.tops.itm.vo.ItmBasicsVO" resultMap="itmBasics" statementType="CALLABLE">
+		{
+			call SP_ITM_BASICS_VIEW(
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<select id="itemHistList" parameterType="com.syds.tops.itm.vo.ItmHistVO" resultMap="itmHist">
+		{
+			call SP_ITM_HIST_LIST(
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<insert id="itemHistSave" parameterType="com.syds.tops.itm.vo.ItmHistVO" statementType="CALLABLE">
+		{
+			call SP_ITM_HIST(
+				#{seq, mode=IN, jdbcType=INTEGER},
+				#{itmMasterSeq, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{itmSeq, mode=IN, jdbcType=INTEGER},
+				#{memo, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{empNo, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{mode, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{seq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</insert>
+
+	<delete id="itemHistDel" parameterType="com.syds.tops.itm.vo.ItmHistVO" statementType="CALLABLE">
+		{
+			call SP_ITM_HIST_DELETE(
+				#{seq, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{empNo, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</delete>
+
+	<select id="itemBranchList" parameterType="com.syds.tops.itm.vo.ItmBranchVO" resultMap="itmBranch">
+		{
+			call SP_ITM_BRANCH_LIST(
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<insert id="itemBranchSave" parameterType="com.syds.tops.itm.vo.ItmBranchVO" statementType="CALLABLE">
+		{
+			call SP_ITM_BRANCH_SAVE(
+				#{itmBranchSeq, mode=IN, jdbcType=INTEGER},
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER},
+				#{branchPlant, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{empNo, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{mode, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{outBranchSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</insert>
+
+	<delete id="itemBranchDel" parameterType="com.syds.tops.itm.vo.ItmBranchVO" statementType="CALLABLE">
+		{
+			call SP_ITM_BRANCH_DELETE(
+				#{itmBranchSeq, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{empNo, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</delete>
+
+	<select id="itemUomList" parameterType="com.syds.tops.itm.vo.ItmUomVO" resultMap="itmUom">
+		{
+			call SP_ITM_UOM_LIST(
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<insert id="itemUomSave" parameterType="com.syds.tops.itm.vo.ItmUomVO" statementType="CALLABLE">
+		{
+			call SP_ITM_UOM_SAVE(
+				#{itmUomSeq, mode=IN, jdbcType=INTEGER},
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER},
+				#{fromUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{toUom, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{conversionFactory, mode=IN, jdbcType=NUMERIC, javaType=BigDecimal},
+				#{empNo, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{mode, mode=IN, jdbcType=VARCHAR},
+				#{outItmUomSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</insert>
+
+	<delete id="itemUomDel" parameterType="com.syds.tops.itm.vo.ItmUomVO" statementType="CALLABLE">
+		{
+			call SP_ITM_UOM_DELETE(
+				#{itmUomSeq, mode=IN, jdbcType=INTEGER},
+				#{empNo, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</delete>
+
+	<insert id="itemLotSave" parameterType="com.syds.tops.itm.vo.ItmLotVO">
+		{
+			call SP_ITM_LOT_SAVE (
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER},
+				#{serialNoRequired, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{lotStatusCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{lotProcessType, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{commitmentDtMtd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{lotExpirationDtMtd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{shelfLifeDays, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{empNo, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{mode, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</insert>
+
+	<select id="itemLocList" parameterType="com.syds.tops.itm.vo.ItmLocVO">
+		{
+			call SP_ITM_LOC_LIST (
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<select id="itemCategoryView" parameterType="com.syds.tops.itm.vo.ItmLocVO" resultMap="itmCategory" statementType="CALLABLE">
+		{
+			call SP_ITM_CATEGORY_VIEW (
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<insert id="itemCategorySave" parameterType="com.syds.tops.itm.vo.ItmCategoryVO">
+		{
+			call SP_ITM_CATEGORY_SAVE (
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=INTEGER},
+				#{salesCatalogSect, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{subSection, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{salesCategoryCd3, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{salesCategoryCd4, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{salesCategoryCd5, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{preferredSalesCarrier, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{commodityClass, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{commoditySubClass, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{supplierRebateCode, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{masterPlanningFamily, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{landedCostRule, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{preferredPurchasingCarrier, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{shippingConditionsCode, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{shippingCommodityClass, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{cycleCountCategory, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{itemDimensionGroup, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{warehouseProcessGrp1, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{warehouseProcessGrp2, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{warehouseProcessGrp3, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{itemPoolCode, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{categoryCode6, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{categoryCode7, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{categoryCode8, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{categoryCode9, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{categoryCode10, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{empNo, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{mode, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</insert>
+
+	<select id="getBranchCdMaster" parameterType="branchCdMaster" resultType="branchCdMaster">
+		{
+			call SP_BRANCH_PLANT_LIST
+			(
+				#{COM_CD, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{BP_CD, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{SEARCHTEXT, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{BUSS_TYPE, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{ERP_TYPE, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</select>
+
+	<select id="selectTotalItm" parameterType="com.syds.tops.itm.vo.ItmVO" resultType="com.syds.tops.itm.vo.ItmVO">
+		{
+			call SP_ITM_TOTAL_LIST (
+				#{itmNo, mode=IN, jdbcType=INTEGER},
+				#{erpItemNo, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<select id="getItemSourcingPdeptList" resultMap="itmSourcingPdeptMap" statementType="CALLABLE">
+		{
+			call SP_ITM_SOURCING_PDEPT_LIST
+		}
+	</select>
+
+	<select id="getItemSourcingPdeptCheck" parameterType="com.syds.tops.itm.vo.ItmSourcingPdeptVO" resultType="Boolean" statementType="CALLABLE">
+		{
+			call SP_ITM_SOURCING_PDEPT_EXIST_CHECK
+			(
+				#{compCd, mode=IN, jdbcType=NCHAR, javaType=String},
+				#{buCd, mode=IN, jdbcType=NCHAR, javaType=String},
+				#{cpCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{dpCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{existFlag, mode=OUT, jdbcType=BIT, javaType=Boolean}
+			)
+		}
+	</select>
+
+	<insert id="saveItemSourcingPdept" parameterType="com.syds.tops.itm.vo.ItmSourcingPdeptVO" statementType="CALLABLE">
+		{
+			call SP_ITM_SOURCING_PDEPT_SAVE (
+				#{itmSourcingPdeptIdx, mode=IN, jdbcType=INTEGER},
+				#{compCd, mode=IN, jdbcType=NCHAR, javaType=String},
+				#{compNm, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{buCd, mode=IN, jdbcType=NCHAR, javaType=String},
+				#{buNm, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{cpCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{cpNm, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{dpCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{dpNm, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{writeEmpNo, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</insert>
+
+	<delete id="deleteItemSourcingPdept" parameterType="com.syds.tops.itm.vo.ItmSourcingPdeptVO" statementType="CALLABLE">
+		{
+			call SP_ITM_SOURCING_PDEPT_DELETE (
+				#{itmSourcingPdeptIdx, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</delete>
+
+	<select id="getItemMappingCategoryTree" parameterType="com.syds.tops.itm.vo.ItmSourcingPdeptVO" resultMap="itmMappingCategoryMap" statementType="CALLABLE">
+		{
+			call SP_ITM_MAPPING_CATEGORY_TREE_SELECT
+			(
+				#{itmSourcingPdeptIdx, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<insert id="saveItemMappingCategoryTree" parameterType="com.syds.tops.itm.vo.ItmMappingCategoryVO" statementType="CALLABLE">
+		{
+			call SP_ITM_MAPPING_CATEGORY_TREE_SAVE
+			(
+				#{itmSourcingPdeptIdx, mode=IN, jdbcType=INTEGER},
+				#{itmCategoryId, mode=IN, jdbcType=INTEGER},
+				#{itmSourcingGroup, mode=IN, jdbcType=NCHAR, javaType=String},
+				#{categoryCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{categoryNm, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{categoryEnNm, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{parentCategoryCd, mode=IN, jdbcType=INTEGER},
+				#{lvl, mode=IN, jdbcType=INTEGER},
+				#{useYn, mode=IN, jdbcType=NCHAR, javaType=String},
+				#{writeEmpNo, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</insert>
+
+	<delete id="deleteItemMappingCategoryTree" parameterType="com.syds.tops.itm.vo.ItmMappingCategoryVO" statementType="CALLABLE">
+		{
+			call SP_ITM_MAPPING_CATEGORY_TREE_DELETE
+			(
+				#{itmCategoryId, mode=IN, jdbcType=INTEGER},
+				#{itmSourcingGroup, mode=IN, jdbcType=NCHAR, javaType=String}
+			)
+		}
+	</delete>
+
+	<select id="getItemMappingCategoryList" parameterType="com.syds.tops.itm.vo.ItmMappingCategoryVO" resultMap="itmMappingCategoryMap" statementType="CALLABLE">
+		{
+			call SP_ITM_MAPPING_CATEGORY_SELECT
+			(
+				#{parentCategoryCd, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<select id="getItemMappingList" parameterType="com.syds.tops.itm.vo.ItmMappingVO" resultType="hashmap" statementType="CALLABLE">
+		{
+			call SP_ITM_MAPPING_LIST
+			(
+				#{itmCategoryId, mode=IN, jdbcType=INTEGER},
+				#{itmSourcingGroup, mode=IN, jdbcType=NCHAR, javaType=String},
+				#{itmSourcingPdeptIdx, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<insert id="saveItemMapping" parameterType="com.syds.tops.itm.vo.ItmMappingVO" statementType="CALLABLE">
+		{
+			call SP_ITM_MAPPING_SAVE
+			(
+				#{itmMappingIdx, mode=IN, jdbcType=INTEGER},
+				#{itmCategoryId, mode=IN, jdbcType=INTEGER},
+				#{itmSourcingGroup, mode=IN, jdbcType=NCHAR, javaType=String},
+				#{itmSourcingPdeptIdx, mode=IN, jdbcType=INTEGER},
+				#{itmMasterSeq, mode=IN, jdbcType=INTEGER},
+				#{itmSeq, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{writeEmpNo, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</insert>
+
+	<delete id="deleteItemMapping" parameterType="com.syds.tops.itm.vo.ItmMappingVO" statementType="CALLABLE">
+		{
+			call SP_ITM_MAPPING_DELETE
+			(
+				#{itmMappingIdx, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</delete>
+
+	<select id="getItemCategoryMappingTreeIdSelect" parameterType="com.syds.tops.itm.vo.ItmMappingCategoryVO" resultMap="itmCategoryMappingMap" statementType="CALLABLE">
+		{
+			call SP_ITM_CATEGORY_TREE_ID_SELECT
+			(
+				#{itmCategoryId, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<select id="getItemSessionCategoryTree" parameterType="com.syds.tops.itm.vo.ItmSourcingPdeptVO" resultMap="itmMappingCategoryMap" statementType="CALLABLE">
+		{
+			call SP_ITM_SESSION_CATEGORY_TREE_SELECT
+			(
+				#{compCd, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</select>
+
+	<select id="getItemMappingVitemSearch" parameterType="hashmap" resultType="hashmap" statementType="CALLABLE">
+		{
+			call SP_ITM_MAPPING_VITEM_SEARCH
+			(
+				#{compCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{krItmKeyword, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{enItmKeyword, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{itmCode, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</select>
+
+	<select id="getItemProfileList" resultType="hashmap" statementType="CALLABLE">
+		{
+			call SP_ITM_PROFILE_LIST
+		}
+	</select>
+
+	<select id="getItemProfileView" parameterType="Integer" resultMap="itmProfileMap" statementType="CALLABLE">
+		{
+			call SP_ITM_PROFILE_VIEW
+			(
+				#{itmProfileSeqId, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<insert id="saveItemProfile" parameterType="com.syds.tops.itm.vo.ItmProfileVO" statementType="CALLABLE">
+		{
+			call SP_ITM_PROFILE_SAVE
+			(
+				#{itmProfileSeqId, mode=IN, jdbcType=INTEGER},
+				#{categoryId3, mode=IN, jdbcType=INTEGER},
+				#{compCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{compNm, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{dpCd, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{dpNm, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{marketScale, jdbcType=NVARCHAR, javaType=String},
+				#{priceDecide, jdbcType=NVARCHAR, javaType=String},
+				#{buyer, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{remark, jdbcType=NVARCHAR, javaType=String},
+				#{writeEmpNo, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</insert>
+
+	<select id="getItemProfileInfoList" parameterType="com.syds.tops.itm.vo.ItmProfileVO" resultType="hashmap" statementType="CALLABLE">
+		{
+			call SP_ITM_PROFILE_INFO_LIST
+			(
+				#{itmProfileSeqId, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<select id="getItemMasterFileList" parameterType="hashmap" resultMap="itmMasterFileMap" statementType="CALLABLE">
+		{
+			call SP_ITM_MASTERFILE_LIST (#{sContent})
+		}
+	</select>
+
+	<select id="getItemMasterFileContentList" parameterType="com.syds.tops.itm.vo.ItmMasterFileVO" resultMap="itmMasterFileContentMap" statementType="CALLABLE">
+		{
+			call SP_ITM_MASTERFILE_CONTENT_LIST
+			(
+				#{masterSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<insert id="saveItemMasterMarketBuyPlan" parameterType="com.syds.tops.itm.vo.ItmMasterFileContentVO" statementType="CALLABLE">
+		{
+			call SP_ITM_MASTERFILE_MARKET_PLAN_SAVE
+			(
+				#{masterSeq, mode=IN, jdbcType=INTEGER},
+				#{seq, mode=IN, jdbcType=INTEGER},
+				#{itmDesc, mode=IN, jdbcType=LONGVARCHAR, javaType=String},
+				#{writeEmpNo, mode=IN, jdbcType=NVARCHAR, javaType=String}
+			)
+		}
+	</insert>
+
+	<delete id="deleteItemMasterMarketBuyPlan" parameterType="com.syds.tops.itm.vo.ItmMasterFileContentVO" statementType="CALLABLE">
+		{
+			call SP_ITM_MASTERFILE_MARKET_PLAN_DELETE
+			(
+				#{masterSeq, mode=IN, jdbcType=INTEGER},
+				#{seq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</delete>
+
+	<select id="getItemMasterFileDetailList" parameterType="com.syds.tops.itm.vo.ItmMasterFileDetailVO" resultType="com.syds.tops.itm.vo.ItmMasterFileDetailVO" statementType="CALLABLE">
+		{
+			call SP_ITM_MASTERFILE_DETAIL_LIST
+			(
+				#{masterSeq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+		<select id="getItemMasterFileDetailList2" parameterType="com.syds.tops.itm.vo.ItmMasterFileDetailVO" resultType="com.syds.tops.itm.vo.ItmMasterFileDetailVO" statementType="CALLABLE">
+		{
+			call SP_ITM_MASTERFILE_DETAIL2_LIST
+			(
+				#{categoryId1, mode=IN, jdbcType=INTEGER}
+				,#{categoryId2, mode=IN, jdbcType=INTEGER}
+				,#{categoryId3, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+
+	<insert id="saveItemMasterFileDetail" parameterType="com.syds.tops.itm.vo.ItmMasterFileDetailVO" statementType="CALLABLE">
+		{
+			call SP_ITM_MASTERFILE_DETAIL_SAVE2
+			(
+				#{masterSeq, mode=IN, jdbcType=INTEGER},
+				#{seq, mode=IN, jdbcType=INTEGER},
+				#{subject, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{content, mode=IN, jdbcType=LONGVARCHAR, javaType=String},
+				#{subjectFg, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{writeEmpNo, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{mode, mode=IN, jdbcType=NVARCHAR, javaType=String},
+				#{categoryId1, mode=IN, jdbcType=INTEGER},
+				#{categoryId2, mode=IN, jdbcType=INTEGER},
+				#{categoryId3, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</insert>
+
+	<delete id="deleteItemMasterFileDetail" parameterType="com.syds.tops.itm.vo.ItmMasterFileDetailVO" statementType="CALLABLE">
+		{
+			call SP_ITM_MASTERFILE_DETAIL_DELETE
+			(
+				#{masterSeq, mode=IN, jdbcType=INTEGER},
+				#{seq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</delete>
+
+	<select id="getItemMasterFileDetailView" parameterType="com.syds.tops.itm.vo.ItmMasterFileDetailVO" resultMap="itmMasterFileDetailMap" statementType="CALLABLE">
+		{
+			call SP_ITM_MASTERFILE_DETAIL_VIEW
+			(
+				#{masterSeq, mode=IN, jdbcType=INTEGER},
+				#{seq, mode=IN, jdbcType=INTEGER}
+			)
+		}
+	</select>
+
+	<!--//[S] formula 자재 관리 -->
+	<select id="SP_FORMULA_SELECT" parameterType="com.syds.tops.itm.vo.ItmFormulaVO" resultType="hashmap">
+		{
+		 	call SP_FORMULA_SELECT(
+		 		#{shItmNo		, mode=IN, jdbcType=NVARCHAR},
+				#{shCompCd		, mode=IN, jdbcType=NVARCHAR},
+				#{shFormulaNm	, mode=IN, jdbcType=NVARCHAR},
+				#{shShortItemNo	, mode=IN, jdbcType=NVARCHAR},
+				#{shScndItemNo	, mode=IN, jdbcType=NVARCHAR},
+				#{shThirdItemNo , mode=IN, jdbcType=NVARCHAR}
+		 	)
+		}
+	</select>
+
+	<select id="SP_FORMULA_VIEW" parameterType="com.syds.tops.itm.vo.ItmFormulaVO"
+								 resultType="com.syds.tops.itm.vo.ItmFormulaVO">
+		{
+		 	call SP_FORMULA_VIEW(#{compCd} , #{itmId} , #{itmNo})
+		}
+	</select>
+
+	<insert id="SP_FORMULA_SAVE" parameterType="com.syds.tops.itm.vo.ItmFormulaVO" statementType="CALLABLE">
+		{
+			call SP_FORMULA_SAVE(
+				#{itmMasterSeq 		, mode=IN, jdbcType=INTEGER},
+				#{itmSeq 			, mode=IN, jdbcType=NVARCHAR},
+				#{formulaNm	 		, mode=IN, jdbcType=NVARCHAR},
+				#{formulaSic 	 	, mode=IN, jdbcType=NVARCHAR},
+				#{formulaSicInput 	, mode=IN, jdbcType=NVARCHAR},
+				#{formulaSicPrint 	, mode=IN, jdbcType=NVARCHAR},
+				#{isRounding 		, mode=IN, jdbcType=NVARCHAR},
+				#{rounding 			, mode=IN, jdbcType=NVARCHAR},
+				#{inputEmpNo 		, mode=IN, jdbcType=NVARCHAR},
+				#{pageMode 			, mode=IN, jdbcType=NVARCHAR},
+				#{itmFormulaSeq 	, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</insert>
+
+	<delete id="SP_FORMULA_DELETE">
+		{
+			call SP_FORMULA_DELETE(#{itmFormulaSeq , mode=IN, jdbcType=INTEGER})
+		}
+	</delete>
+	<!--//[E] formula  자재관리-->
+
+	<select id="V_ITM_SELECT" parameterType="com.syds.tops.itm.vo.ItmMasterVO" resultType="com.syds.tops.itm.vo.ItmMasterVO">
+		SELECT [itmMasterSeq]
+		      ,[compCd]
+		      ,dbo.FN_GET_COMP_NM(compCd) AS compNm
+		      ,[itmSeq]
+		      ,[branchPlant]
+		      ,[branchPlantNm]
+		      ,[glClass]
+		      ,[scndLoc]
+		      ,[unitPrice]
+		      ,salesCatalogSect
+		      ,dbo.FN_GET_CODE_NAME2('SALES_CATALOG_SECT' , salesCatalogSect , #{compCd}) + ' [' + RTRIM(LTRIM(salesCatalogSect)) + ']' AS   salesCatalogSectNm
+		      ,commodityClass
+		      ,dbo.FN_GET_CODE_NAME2('COMMODITY_CLASS' 	  , commodityClass , #{compCd}) + ' [' + RTRIM(LTRIM(commodityClass)) + ']' AS commodityClassNm
+		      ,commoditySubClass
+		      ,dbo.FN_GET_CODE_NAME2('COMMODITY_SUB_CLASS' , commoditySubClass , #{compCd}) + ' [' + RTRIM(LTRIM(commoditySubClass)) + ']' AS commoditySubClassNm
+		      ,masterPlanningFamily
+		      ,dbo.FN_GET_CODE_NAME2('MASTER_PLANNING_FAMILY' , masterPlanningFamily , #{compCd}) + ' [' + RTRIM(LTRIM(masterPlanningFamily)) + ']' as masterPlanningFamilyNm
+		      ,shippingConditionsCode
+		      ,dbo.FN_GET_CODE_NAME2('SHIPPING_COMMONDITY_CLASS' , shippingConditionsCode , #{compCd}) + ' [' +  RTRIM(LTRIM(shippingConditionsCode)) + ']' AS shippingConditionsCodeNm
+		      ,warehouseProcessGrp3
+		      ,dbo.FN_GET_CODE_NAME2('WAREHOUSE_PROCESS_GRP3' , warehouseProcessGrp3 , #{compCd}) + ' [' + RTRIM(LTRIM(warehouseProcessGrp3))  + ']' AS warehouseProcessGrp3Nm
+		      ,lotStatusCd
+		      ,dbo.FN_GET_CODE_NAME2('LOT_STATUS_CD' , lotStatusCd , #{compCd})  + ' [' + RTRIM(LTRIM(lotStatusCd))  + ']'   AS lotStatusCdNm
+		      ,dbo.FN_GET_CODE_NAME2('LOT_PROCESS_TYPE' , lotProcessType , #{compCd})  + ' [' + RTRIM(LTRIM(lotProcessType))  + ']'  AS lotProcessTypeNm
+		      ,[shelfLifeDays]
+		      ,[itmId]
+		      ,[itmNo]
+		      ,[constYn]
+		      ,[shortItemNo]
+		      ,[scndItemNo]
+		      ,[thirdItemNo]
+		      ,[itmNm]
+		      ,[itmNmEng]
+		      ,[catalogNm]
+		      ,[searchText]
+		      ,stockingType
+		      ,dbo.FN_GET_CODE_NAME2('STOCKING_TYPE' , stockingType , #{compCd}) + ' [' + RTRIM(LTRIM(stockingType))  + ']'  AS stockingTypeNm
+		      ,[specStandard]
+		      ,[specMapping]
+		      ,[uom]
+		      ,[uomPurchasing]
+		      ,lineType
+		      ,dbo.FN_GET_CODE_NAME2('LINE_TYPE' , lineType , #{compCd}) + ' [' + RTRIM(LTRIM(lineType)) +']' AS lineTypeNm
+		      ,bulkPackedFg
+		      ,dbo.FN_GET_CODE_NAME2('BULK_PACKED_FG' , bulkPackedFg , #{compCd}) + ' [' + RTRIM(LTRIM(bulkPackedFg)) + ']'  AS bulkPackedFgNm
+		      ,[useYn]
+		      ,[categoryCd1]
+		      ,[categoryNm1]
+		      ,[categoryCd2]
+		      ,[categoryNm2]
+		      ,[trcategoryCd2]
+		      ,[wonbuCategoryId1]
+		      ,[wonbuCategoryId2]
+		      ,[wonbuCategoryId3]
+		      ,[usages]
+		      /*,[fileSeq]*/
+		      ,inventoryCostLv
+		      ,dbo.FN_GET_CODE_NAME2('INVENTORY_COST_LV' , inventoryCostLv, #{compCd}) + ' [' + RTRIM(LTRIM(inventoryCostLv))  + ']' AS inventoryCostLvNm
+		      ,salesPriceLv
+		      ,dbo.FN_GET_CODE_NAME2('SALES_PRICE_LV' , salesPriceLv, #{compCd}) + ' [' + RTRIM(LTRIM(salesPriceLv))  + ']' AS salesPriceLvNm
+		      ,purchasePriceLv
+		      ,dbo.FN_GET_CODE_NAME2('PURCHASE_PRICE_LV' , purchasePriceLv, #{compCd}) + ' [' + RTRIM(LTRIM(purchasePriceLv))  + ']' as purchasePriceLvNm
+		      ,[itmGubn]
+		      ,[orgArea]
+		      ,[maker]
+		      ,[ioFlag]
+		      ,[currencyId]
+		      ,[mroRegYn]
+		      ,[mroItmCd]
+		      ,[msdsMngYn]
+		      ,[msdsDocId]
+		      ,[msdsReceiptYn]
+		      ,[msdsNotReceiptRsn]
+		      /*,[orderFg]*/
+		      ,[crcd]
+		      /*,[g2bno]*/
+		      ,orderPolicyCd
+		      ,dbo.FN_GET_CODE_NAME2('ORDER_POLICY_CD' , orderPolicyCd, #{compCd}) + ' [' + RTRIM(LTRIM(orderPolicyCd))  + ']'   AS orderPolicyCdNm
+		      ,[valueOrderPolicy]
+		      ,issueTypeCd
+		      ,dbo.FN_GET_CODE_NAME2('ISSUE_TYPE_CD' , issueTypeCd, #{compCd})  + ' [' + RTRIM(LTRIM(issueTypeCd))  + ']'  AS issueTypeCdNm
+		      ,planningCd
+		      ,dbo.FN_GET_CODE_NAME2('PLANNING_CD' , planningCd, #{compCd}) + ' [' + RTRIM(LTRIM(planningCd))  + ']'   AS planningCdNm
+		      ,planningFenceRule
+		      ,dbo.FN_GET_CODE_NAME2('PLANNING_FENCE_RULE' , planningFenceRule, #{compCd}) + ' [' + RTRIM(LTRIM(planningFenceRule))  + ']'   AS planningFenceRuleNm
+		      ,[planningFence]
+		      ,[freezeFence]
+		      ,[leadtimeLevel]
+		      ,fixedVariable
+		      ,dbo.FN_GET_CODE_NAME2('FIXED_VARIABLE' , fixedVariable, #{compCd}) + ' [' + RTRIM(LTRIM(fixedVariable))  + ']'   AS fixedVariable
+		      ,[multipleOrderQuantity]
+		      ,[unitsPerContainer]
+		      ,[safetyStock]
+		      ,[inputEmpNo]
+		      ,[inputEmpDt]
+		      ,[modEmpNo]
+		      ,[modDt]
+		  FROM [dbo].[V_ITM] WHERE 1=1
+			<if test='itmMasterSeq	!= null and  itmMasterSeq				!= "" '> AND itmMasterSeq		=#{itmMasterSeq} 	</if>
+			<if test='compCd		!= null and  compCd						!= "" '> AND compCd		  		=#{compCd}		  	</if>
+			<if test='itmSeq		!= null and  itmSeq						!= "" '> AND itmSeq		  		=#{itmSeq}		  	</if>
+			<if test='branchPlant	!= null and  branchPlant				!= "" '> AND branchPlant		=#{branchPlant}		</if>
+			<if test='branchPlantNm	!= null and  branchPlantNm				!= "" '> AND branchPlantNm	    =#{branchPlantNm}	</if>
+			<if test='glClass			!= null and  glClass				!= "" '> AND glClass		    =#{glClass}		  	</if>
+			<if test='scndLoc			!= null and  scndLoc				!= "" '> AND scndLoc		    =#{scndLoc}		  	</if>
+			<if test='unitPrice			!= null and  unitPrice				!= "" '> AND unitPrice		    =#{unitPrice}		  	</if>
+			<if test='salesCatalogSect		!= null and  salesCatalogSect	!= "" '> AND salesCatalogSect	=#{salesCatalogSect}	</if>
+			<if test='commodityClass		!= null and  commodityClass		!= "" '> AND commodityClass	    =#{commodityClass}	  	</if>
+			<if test='commoditySubClass		!= null and  commoditySubClass	!= "" '> AND commoditySubClass	=#{commoditySubClass}	</if>
+			<if test='masterPlanningFamily		!= null and  masterPlanningFamily	!= "" '> AND masterPlanningFamily	=#{masterPlanningFamily}	</if>
+			<if test='shippingConditionsCode	!= null and  shippingConditionsCode	!= "" '> AND shippingConditionsCode =#{shippingConditionsCode} 	</if>
+			<if test='warehouseProcessGrp3		!= null and  warehouseProcessGrp3	!= "" '> AND warehouseProcessGrp3	=#{warehouseProcessGrp3}  	</if>
+			<if test='lotStatusCd			!= null and  lotStatusCd		!= "" '> AND lotStatusCd		=#{lotStatusCd}		  		</if>
+			<if test='lotProcessType		!= null and  lotProcessType		!= "" '> AND lotProcessType	  	=#{lotProcessType}	  		</if>
+			<if test='shelfLifeDays			!= null and  shelfLifeDays		!= "" '> AND shelfLifeDays	  	=#{shelfLifeDays}	  		</if>
+			<if test='itmId					!= null and  itmId				!= "" '> AND itmId		  		=#{itmId}		  			</if>
+			<if test='itmNo					!= null and  itmNo				!= "" '> AND itmNo		  		=#{itmNo}		  			</if>
+			<if test='constYn				!= null and  constYn			!= "" '> AND constYn		 	=#{constYn}		  			</if>
+			<if test='shortItemNo			!= null and  shortItemNo		!= "" '> AND shortItemNo		=#{shortItemNo}		  		</if>
+			<if test='scndItemNo			!= null and  scndItemNo			!= "" '> AND scndItemNo	        =#{scndItemNo}	          	</if>
+			<if test='thirdItemNo			!= null and  thirdItemNo		!= "" '> AND thirdItemNo		=#{thirdItemNo}		  		</if>
+			<if test='itmNm					!= null and  itmNm				!= "" '> AND itmNm	          	=#{itmNm}	          		</if>
+			<if test='itmNmEng				!= null and  itmNmEng			!= "" '> AND itmNmEng	        =#{itmNmEng}	          	</if>
+			<if test='catalogNm				!= null and  catalogNm			!= "" '> AND catalogNm		    =#{catalogNm}		  		</if>
+			<if test='searchText			!= null and  searchText			!= "" '> AND searchText	        =#{searchText}	          	</if>
+			<if test='stockingType			!= null and  stockingType		!= "" '> AND stockingType		=#{stockingType}		  	</if>
+			<if test='specStandard			!= null and  specStandard		!= "" '> AND specStandard		=#{specStandard}		  	</if>
+			<if test='specMapping			!= null and  specMapping		!= "" '> AND specMapping		=#{specMapping}		  		</if>
+			<if test='uom					!= null and  uom				!= "" '> AND uom			  	=#{uom}			  			</if>
+			<if test='uomPurchasing			!= null and  uomPurchasing		!= "" '> AND uomPurchasing	  	=#{uomPurchasing}	  		</if>
+			<if test='lineType				!= null and  lineType			!= "" '> AND lineType	        =#{lineType}	           	</if>
+			<if test='bulkPackedFg			!= null and  bulkPackedFg		!= "" '> AND bulkPackedFg	 	=#{bulkPackedFg}	 		</if>
+			<if test='useYn					!= null and  useYn				!= "" '> AND useYn	          	=#{useYn}	          		</if>
+			<if test='categoryCd1			!= null and  categoryCd1		!= "" '> AND categoryCd1		=#{categoryCd1}				</if>
+			<if test='categoryNm1			!= null and  categoryNm1		!= "" '> AND categoryNm1		=#{categoryNm1}				</if>
+			<if test='categoryCd2			!= null and  categoryCd2		!= "" '> AND categoryCd2		=#{categoryCd2}				</if>
+			<if test='categoryNm2			!= null and  categoryNm2		!= "" '> AND categoryNm2		=#{categoryNm2}				</if>
+			<if test='trcategoryCd2			!= null and  trcategoryCd2		!= "" '> AND trcategoryCd2	    =#{trcategoryCd2}	  		</if>
+			<if test='wonbuCategoryId1		!= null and  wonbuCategoryId1	!= "" '> AND wonbuCategoryId1	=#{wonbuCategoryId1}	  	</if>
+			<if test='wonbuCategoryId2		!= null and  wonbuCategoryId2	!= "" '> AND wonbuCategoryId2   =#{wonbuCategoryId2}       	</if>
+			<if test='wonbuCategoryId3		!= null and  wonbuCategoryId3	!= "" '> AND wonbuCategoryId3	=#{wonbuCategoryId3}	  	</if>
+			<if test='usages				!= null and  usages				!= "" '> AND usages		  		=#{usages}		  			</if>
+			<if test='fileSeq				!= null and  fileSeq			!= "" '> AND fileSeq		  	=#{fileSeq}		  			</if>
+			<if test='inventoryCostLv		!= null and  inventoryCostLv	!= "" '> AND inventoryCostLv	=#{inventoryCostLv}	  		</if>
+			<if test='salesPriceLv			!= null and  salesPriceLv		!= "" '> AND salesPriceLv		=#{salesPriceLv}			</if>
+			<if test='purchasePriceLv		!= null and  purchasePriceLv	!= "" '> AND purchasePriceLv	=#{purchasePriceLv}	  		</if>
+			<if test='itmGubn				!= null and  itmGubn			!= "" '> AND itmGubn		  	=#{itmGubn}		  			</if>
+			<if test='orgArea				!= null and  orgArea			!= "" '> AND orgArea		  	=#{orgArea}		  			</if>
+			<if test='maker					!= null and  maker				!= "" '> AND maker		  		=#{maker}		  			</if>
+			<if test='ioFlag				!= null and  ioFlag				!= "" '> AND ioFlag		  		=#{ioFlag}		  			</if>
+			<if test='currencyId			!= null and  currencyId			!= "" '> AND currencyId		  	=#{currencyId}				</if>
+			<if test='mroRegYn				!= null and  mroRegYn			!= "" '> AND mroRegYn		  	=#{mroRegYn}		  		</if>
+			<if test='mroItmCd				!= null and  mroItmCd			!= "" '> AND mroItmCd		  	=#{mroItmCd}		  		</if>
+			<if test='msdsMngYn				!= null and  msdsMngYn			!= "" '> AND msdsMngYn		  	=#{msdsMngYn}		  		</if>
+			<if test='msdsDocId				!= null and  msdsDocId			!= "" '> AND msdsDocId		  	=#{msdsDocId}		  		</if>
+			<if test='msdsReceiptYn			!= null and  msdsReceiptYn		!= "" '> AND msdsReceiptYn	  	=#{msdsReceiptYn}	  		</if>
+			<if test='msdsNotReceiptRsn		!= null and  msdsNotReceiptRsn	!= "" '> AND msdsNotReceiptRsn	=#{msdsNotReceiptRsn}	  	</if>
+			<if test='orderFg				!= null and  orderFg			!= "" '> AND orderFg		  	=#{orderFg}		  			</if>
+			<if test='crcd					!= null and  crcd				!= "" '> AND crcd			  	=#{crcd}					</if>
+			<if test='g2bno					!= null and  g2bno				!= "" '> AND g2bno		  		=#{g2bno}		  			</if>
+			<if test='orderPolicyCd			!= null and  orderPolicyCd		!= "" '> AND orderPolicyCd	  	=#{orderPolicyCd}	  		</if>
+			<if test='valueOrderPolicy		!= null and  valueOrderPolicy	!= "" '> AND valueOrderPolicy	=#{valueOrderPolicy}	  	</if>
+			<if test='issueTypeCd			!= null and  issueTypeCd		!= "" '> AND issueTypeCd		=#{issueTypeCd}				</if>
+			<if test='planningCd			!= null and  planningCd			!= "" '> AND planningCd		  	=#{planningCd}				</if>
+			<if test='planningFenceRule		!= null and  planningFenceRule	!= "" '> AND planningFenceRule	=#{planningFenceRule}	  	</if>
+			<if test='planningFence			!= null and  planningFence		!= "" '> AND planningFence		=#{planningFence}	  		</if>
+			<if test='freezeFence			!= null and  freezeFence		!= "" '> AND freezeFence		=#{freezeFence}				</if>
+			<if test='leadtimeLevel			!= null and  leadtimeLevel		!= "" '> AND leadtimeLevel	    =#{leadtimeLevel}	   		</if>
+			<if test='fixedVariable			!= null and  fixedVariable		!= "" '> AND fixedVariable      =#{fixedVariable}          	</if>
+			<if test='multipleOrderQuantity	!= null and  multipleOrderQuantity	!= "" '> AND multipleOrderQuantity  =#{multipleOrderQuantity}  	</if>
+			<if test='unitsPerContainer		!= null and  unitsPerContainer		!= "" '> AND unitsPerContainer	  =#{unitsPerContainer}	</if>
+			<if test='safetyStock			!= null and  safetyStock			!= "" '> AND safetyStock		  =#{safetyStock}		</if>
+			<if test='inputEmpNo			!= null and  inputEmpNo				!= "" '> AND inputEmpNo		=#{inputEmpNo}				</if>
+			<if test='inputEmpDt			!= null and  inputEmpDt				!= "" '> AND inputEmpDt		=#{inputEmpDt}				</if>
+			<if test='modEmpNo				!= null and  modEmpNo				!= "" '> AND modEmpNo		=#{modEmpNo}				</if>
+			<if test='modDt					!= null and  modDt					!= "" '> AND modDt		    =#{modDt}		  			</if>
+			ORDER BY inputEmpDt DESC , modDt DESC
+	</select>
+
+	<select id="V_ITM_GROUP_SELECT" parameterType="com.syds.tops.itm.vo.ItmMasterVO" resultType="com.syds.tops.itm.vo.ItmMasterVO">
+		SELECT [itmMasterSeq]		AS itmMasterSeq
+		      ,[itmSeq]				AS itmSeq
+		      ,MAX(compCd) 			AS compCd
+		      ,(select COM_NM from TOPS_COMPANY where COM_CD = MAX(compCd)) as compNm
+		      ,MAX(itmId)           AS itmId
+		      ,MAX(itmNo)           AS itmNo
+		      ,MAX(shortItemNo)     AS shortItemNo
+		      ,MAX(scndItemNo)      AS scndItemNo
+		      ,MAX(thirdItemNo)     AS thirdItemNo
+		      ,MAX(itmNm)           AS itmNm
+		      ,MAX(itmNmEng)        AS itmNmEng
+		      ,MAX(searchText)      AS searchText
+		  FROM [dbo].[V_ITM] WHERE 1=1
+			<if test='itmMasterSeq	!= null and  itmMasterSeq				!= "" '> AND itmMasterSeq		=#{itmMasterSeq} 	</if>
+			<if test='itmSeq		!= null and  itmSeq						!= "" '> AND itmSeq		  		=#{itmSeq}		  	</if>
+			<if test='compCd		!= null and  compCd						!= "" '> AND compCd		  		=#{compCd}		  	</if>
+			<if test='itmId					!= null and  itmId				!= "" '> AND itmId		  		=#{itmId}		  			</if>
+			<if test='itmNo					!= null and  itmNo				!= "" '> AND itmNo		  		=#{itmNo}		  			</if>
+			<if test='shortItemNo			!= null and  shortItemNo		!= "" '> AND shortItemNo		=#{shortItemNo}		  		</if>
+			<if test='scndItemNo			!= null and  scndItemNo			!= "" '> AND scndItemNo	        =#{scndItemNo}	          	</if>
+			<if test='thirdItemNo			!= null and  thirdItemNo		!= "" '> AND thirdItemNo		=#{thirdItemNo}		  		</if>
+			<if test='itmNm					!= null and  itmNm				!= "" '> AND itmNm	          	LIKE '%'+#{itmNm}+'%'	          		</if>
+			<if test='itmNmEng				!= null and  itmNmEng			!= "" '> AND itmNmEng	        =#{itmNmEng}	          	</if>
+			<if test='stockingType			!= null and  stockingType		!= "" '> AND stockingType		=#{stockingType}		  	</if>
+			GROUP BY itmMasterSeq  , itmSeq
+			ORDER BY max(inputEmpDt) desc , max(modDt) desc
+	</select>
+
+	<select id="V_ITM_BRANCH_SELECT" parameterType="com.syds.tops.itm.vo.ItmMasterVO" resultType="com.syds.tops.itm.vo.ItmMasterVO">
+		SELECT itmMasterSeq
+		      ,compCd
+		      ,itmSeq
+		      ,branchPlant
+		      ,branchPlantNm
+		      ,itmId
+		      ,itmNo
+		      ,constYn
+		      ,shortItemNo
+		      ,scndItemNo
+		      ,thirdItemNo
+		      ,itmNm
+		      ,itmNmEng
+		      ,inputEmpNo
+		      ,'' AS inputEmpNm
+		  FROM [dbo].[V_ITM] WHERE 1=1
+			<if test='itmMasterSeq	!= null and  itmMasterSeq		!= "" '> AND itmMasterSeq		=#{itmMasterSeq} 	</if>
+			<if test='compCd		!= null and  compCd				!= "" '> AND compCd		  		=#{compCd}		  	</if>
+			<if test='itmSeq		!= null and  itmSeq				!= "" '> AND itmSeq		  		=#{itmSeq}		  	</if>
+			<if test='branchPlant	!= null and  branchPlant		!= "" '> AND branchPlant		=#{branchPlant}		</if>
+			<if test='branchPlantNm	!= null and  branchPlantNm		!= "" '> AND branchPlantNm	    =#{branchPlantNm}	</if>
+			<if test='itmId			!= null and  itmId				!= "" '> AND itmId		  		=#{itmId}		  	</if>
+			<if test='itmNo			!= null and  itmNo				!= "" '> AND itmNo		  		=#{itmNo}		  	</if>
+			<if test='constYn		!= null and  constYn			!= "" '> AND constYn		 	=#{constYn}		  	</if>
+			<if test='shortItemNo	!= null and  shortItemNo		!= "" '> AND shortItemNo		=#{shortItemNo}		</if>
+			<if test='scndItemNo	!= null and  scndItemNo			!= "" '> AND scndItemNo	        =#{scndItemNo}	    </if>
+			<if test='thirdItemNo	!= null and  thirdItemNo		!= "" '> AND thirdItemNo		=#{thirdItemNo}		</if>
+			<if test='itmNm			!= null and  itmNm				!= "" '> AND itmNm	          	=#{itmNm}	        </if>
+			<if test='itmNmEng		!= null and  itmNmEng			!= "" '> AND itmNmEng	        =#{itmNmEng}	    </if>
+			<if test='inputEmpNo	!= null and  inputEmpNo			!= "" '> AND inputEmpNo			=#{inputEmpNo}		</if>
+			<if test='inputEmpDt	!= null and  inputEmpDt			!= "" '> AND inputEmpDt			=#{inputEmpDt}		</if>
+			<if test='modEmpNo		!= null and  modEmpNo			!= "" '> AND modEmpNo			=#{modEmpNo}		</if>
+			<if test='modDt			!= null and  modDt				!= "" '> AND modDt		    	=#{modDt}		  	</if>
+	</select>
+
+	<insert id="SP_ITM_SAVE_NEW_INSERT" parameterType="com.syds.tops.itm.vo.ItmMasterVO">
+	 {
+        call SP_ITM_SAVE_NEW_INSERT
+        (
+            #{compCd, mode=IN, jdbcType=NVARCHAR}
+            ,#{itmId, mode=IN, jdbcType=NVARCHAR}
+            ,#{itmNo, mode=IN, jdbcType=NVARCHAR}
+            ,#{constYn, mode=IN, jdbcType=NVARCHAR}
+            ,#{shortItemNo, mode=IN, jdbcType=NVARCHAR}
+            ,#{scndItemNo, mode=IN, jdbcType=NVARCHAR}
+            ,#{thirdItemNo, mode=IN, jdbcType=NVARCHAR}
+            ,#{itmNm, mode=IN, jdbcType=NVARCHAR}
+            ,#{itmNmEng, mode=IN, jdbcType=NVARCHAR}
+            ,#{catalogNm, mode=IN, jdbcType=NVARCHAR}
+            ,#{searchText, mode=IN, jdbcType=NVARCHAR}
+            ,#{stockingType, mode=IN, jdbcType=NVARCHAR}
+            ,#{specStandard, mode=IN, jdbcType=NVARCHAR}
+            ,#{specMapping, mode=IN, jdbcType=NVARCHAR}
+            ,#{uom, mode=IN, jdbcType=NVARCHAR}
+            ,#{uomPurchasing, mode=IN, jdbcType=NVARCHAR}
+            ,#{lineType, mode=IN, jdbcType=NVARCHAR}
+            ,#{bulkPackedFg, mode=IN, jdbcType=NVARCHAR}
+            ,#{useYn, mode=IN, jdbcType=NVARCHAR}
+            ,#{categoryCd1, mode=IN, jdbcType=NVARCHAR}
+            ,#{categoryNm1, mode=IN, jdbcType=NVARCHAR}
+            ,#{categoryCd2, mode=IN, jdbcType=NVARCHAR}
+            ,#{categoryNm2, mode=IN, jdbcType=NVARCHAR}
+            ,#{trcategoryCd2, mode=IN, jdbcType=NVARCHAR}
+            ,#{wonbuCategoryId1, mode=IN, jdbcType=NVARCHAR}
+            ,#{wonbuCategoryId2, mode=IN, jdbcType=NVARCHAR}
+            ,#{wonbuCategoryId3, mode=IN, jdbcType=NVARCHAR}
+            ,#{usages, mode=IN, jdbcType=NVARCHAR}
+            ,#{fileSeq, mode=IN, jdbcType=NVARCHAR}
+            ,#{inventoryCostLv, mode=IN, jdbcType=NVARCHAR}
+            ,#{salesPriceLv, mode=IN, jdbcType=NVARCHAR}
+            ,#{purchasePriceLv, mode=IN, jdbcType=NVARCHAR}
+            ,#{itmGubn, mode=IN, jdbcType=NVARCHAR}
+            ,#{orgArea, mode=IN, jdbcType=NVARCHAR}
+            ,#{maker, mode=IN, jdbcType=NVARCHAR}
+            ,#{ioFlag, mode=IN, jdbcType=NVARCHAR}
+            ,#{currencyId, mode=IN, jdbcType=NVARCHAR}
+            ,#{mroRegYn, mode=IN, jdbcType=NVARCHAR}
+            ,#{mroItmCd, mode=IN, jdbcType=NVARCHAR}
+            ,#{msdsMngYn, mode=IN, jdbcType=NVARCHAR}
+            ,#{msdsDocId, mode=IN, jdbcType=NVARCHAR}
+            ,#{msdsReceiptYn, mode=IN, jdbcType=NVARCHAR}
+            ,#{msdsNotReceiptRsn, mode=IN, jdbcType=NVARCHAR}
+            ,#{orderFg, mode=IN, jdbcType=NVARCHAR}
+            ,#{crcd, mode=IN, jdbcType=NVARCHAR}
+            ,#{g2bno, mode=IN, jdbcType=NVARCHAR}
+            ,#{orderPolicyCd, mode=IN, jdbcType=NVARCHAR}
+            ,#{valueOrderPolicy, mode=IN, jdbcType=DECIMAL}
+            ,#{issueTypeCd, mode=IN, jdbcType=NVARCHAR}
+            ,#{planningCd, mode=IN, jdbcType=NVARCHAR}
+            ,#{planningFenceRule, mode=IN, jdbcType=NVARCHAR}
+            ,#{planningFence, mode=IN, jdbcType=DECIMAL}
+            ,#{freezeFence, mode=IN, jdbcType=DECIMAL}
+            ,#{leadtimeLevel, mode=IN, jdbcType=DECIMAL}
+            ,#{fixedVariable, mode=IN, jdbcType=VARCHAR}
+            ,#{multipleOrderQuantity, mode=IN, jdbcType=DECIMAL}
+            ,#{unitsPerContainer, mode=IN, jdbcType=DECIMAL}
+            ,#{safetyStock, mode=IN, jdbcType=DECIMAL}
+            ,#{branchPlant, mode=IN, jdbcType=NVARCHAR}
+            ,#{branchPlantNm, mode=IN, jdbcType=NVARCHAR}
+            ,#{glClass, mode=IN, jdbcType=NVARCHAR}
+            ,#{scndLoc, mode=IN, jdbcType=NVARCHAR}
+            ,#{unitPrice, mode=IN, jdbcType=DECIMAL}
+            ,#{salesCatalogSect, mode=IN, jdbcType=NVARCHAR}
+            ,#{commodityClass, mode=IN, jdbcType=NVARCHAR}
+            ,#{commoditySubClass, mode=IN, jdbcType=NVARCHAR}
+            ,#{masterPlanningFamily, mode=IN, jdbcType=NVARCHAR}
+            ,#{shippingConditionsCode, mode=IN, jdbcType=NVARCHAR}
+            ,#{warehouseProcessGrp3, mode=IN, jdbcType=NVARCHAR}
+            ,#{lotStatusCd, mode=IN, jdbcType=NVARCHAR}
+            ,#{lotProcessType, mode=IN, jdbcType=NVARCHAR}
+            ,#{shelfLifeDays, mode=IN, jdbcType=DECIMAL}
+            ,#{inputEmpNo, mode=IN, jdbcType=NVARCHAR}
+        )
+    }
+	</insert>
+
+	<insert id="SP_ITM_NONE_SAVE_NEW_INSERT" parameterType="com.syds.tops.itm.vo.ItmMasterVO">
+	 {
+        call SP_ITM_NONE_SAVE_NEW_INSERT
+        (
+            #{compCd, mode=IN, jdbcType=NVARCHAR}
+            ,#{itmId, mode=IN, jdbcType=NVARCHAR}
+            ,#{itmNo, mode=IN, jdbcType=NVARCHAR}
+            ,#{constYn, mode=IN, jdbcType=NVARCHAR}
+            ,#{shortItemNo, mode=IN, jdbcType=NVARCHAR}
+            ,#{scndItemNo, mode=IN, jdbcType=NVARCHAR}
+            ,#{thirdItemNo, mode=IN, jdbcType=NVARCHAR}
+            ,#{itmNm, mode=IN, jdbcType=NVARCHAR}
+            ,#{itmNmEng, mode=IN, jdbcType=NVARCHAR}
+            ,#{searchText, mode=IN, jdbcType=NVARCHAR}
+            ,#{stockingType, mode=IN, jdbcType=NVARCHAR}
+            ,#{specStandard, mode=IN, jdbcType=NVARCHAR}
+            ,#{glClass, mode=IN, jdbcType=NVARCHAR}
+            ,#{uom, mode=IN, jdbcType=NVARCHAR}
+            ,#{uomPurchasing, mode=IN, jdbcType=NVARCHAR}
+            ,#{lineType, mode=IN, jdbcType=NVARCHAR}
+            ,#{useYn, mode=IN, jdbcType=NVARCHAR}
+            ,#{inputEmpNo, mode=IN, jdbcType=NVARCHAR}
+        )
+    }
+	</insert>
+
+	<select id="SP_ITM_MASTER_FILE_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+		 	call SP_ITM_MASTER_FILE_SELECT
+		}
+	</select>
+
+	<select id="SP_ITM_TOP_GUBN_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+		 	call SP_ITM_TOP_GUBN_SELECT (#{itmId}, #{compCd}, #{shortItemNo})
+		}
+	</select>
+
+	<select id="SP_ITM_WONBU_USER_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+		 	call SP_ITM_WONBU_USER_SELECT (#{itmNo})
+		}
+	</select>
+
+	<insert id="SP_ITM_WONBU_SAVE" parameterType="hashmap">
+	 {
+        call SP_ITM_WONBU_SAVE
+        (
+            #{itmNo, mode=IN, jdbcType=NVARCHAR}
+            ,#{wonbuCategory3, mode=IN, jdbcType=NVARCHAR}
+            ,#{usage, mode=IN, jdbcType=NVARCHAR}
+            ,#{remark, mode=IN, jdbcType=NVARCHAR}
+            ,#{empNo, mode=IN, jdbcType=NVARCHAR}
+            ,#{itmMasterFile, mode=IN, jdbcType=NVARCHAR}
+        )
+    }
+	</insert>
+
+	<select id="SP_WONBU_CATEGORY1_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+		 	call SP_WONBU_CATEGORY1_SELECT
+		}
+	</select>
+
+	<select id="SP_WONBU_CATEGORY2_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+		 	call SP_WONBU_CATEGORY2_SELECT (#{categoryId})
+		}
+	</select>
+
+	<select id="SP_WONBU_CATEGORY3_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+		 	call SP_WONBU_CATEGORY3_SELECT (#{categoryId})
+		}
+	</select>
+
+	<select id="SP_WONBU_CATEGORY" parameterType="hashmap" resultType="hashmap">
+		{
+			 	call SP_WONBU_CATEGORY (#{view} , #{upcategoey})
+		}
+	</select>
+
+	<select id="SP_WONBU_CATEGORY_ITM" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_WONBU_CATEGORY_ITM ( #{CATEGORY_ID1} , #{CATEGORY_ID2} , #{CATEGORY_ID3} )
+		}
+	</select>
+
+	<select id="SP_WONBU_CATEGORY_ITM2" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_WONBU_CATEGORY_ITM2 ( #{CATEGORY_ID1} , #{CATEGORY_ID2} , #{CATEGORY_ID3} )
+		}
+	</select>
+
+
+	<insert id="SP_WONBU_CATEGORY3_SAVE" parameterType="com.syds.tops.itm.vo.ItmWonbuVO">
+	 {
+        call SP_WONBU_CATEGORY3_SAVE
+        (
+            #{CATEGORY_NM3, mode=IN, jdbcType=NVARCHAR}
+            ,#{CATEGORY_ID1, mode=IN, jdbcType=NVARCHAR}
+            ,#{CATEGORY_NM1, mode=IN, jdbcType=NVARCHAR}
+            ,#{CATEGORY_ID2, mode=IN, jdbcType=NVARCHAR}
+            ,#{CATEGORY_NM2, mode=IN, jdbcType=NVARCHAR}
+            ,#{CATEGORY_ID3, mode=IN, jdbcType=NVARCHAR}
+            ,#{STATUS, mode=IN, jdbcType=NVARCHAR}
+            ,#{CATEGORY_LV3_SEQ, mode=IN, jdbcType=NVARCHAR}
+            ,#{IS_IMP_ITM, mode=IN, jdbcType=NVARCHAR}
+        )
+    }
+	</insert>
+
+	<insert id="SP_WONBU_CATEGORY2_SAVE" parameterType="com.syds.tops.itm.vo.ItmWonbuVO">
+	 {
+	    call SP_WONBU_CATEGORY2_SAVE
+        (
+             #{CATEGORY_ID1, mode=IN, jdbcType=NVARCHAR}
+            ,#{CATEGORY_NM2, mode=IN, jdbcType=NVARCHAR}
+            ,#{CATEGORY_LV2_SEQ, mode=IN, jdbcType=NVARCHAR}
+            ,#{STATUS, mode=IN, jdbcType=NVARCHAR}
+            ,#{CATEGORY_ID2, mode=IN, jdbcType=NVARCHAR}
+        )
+    }
+	</insert>
+
+
+	<insert id="SP_WONBU_CATEGORY_ITM_UPDATE" parameterType="hashmap" >
+	 {
+        call SP_WONBU_CATEGORY_ITM_UPDATE
+        (
+             #{CATEGORY_ID1}
+            ,#{CATEGORY_ID2}
+            ,#{CATEGORY_ID3}
+            ,#{SHORT_ITEM_NO}
+            ,#{SCND_ITEM_NO}
+            ,#{THIRD_ITEM_NO}
+            ,#{ITM_SEQ}
+        )
+    }
+	</insert>
+
+	<select id="SP_ITM_NEW_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_NEW_VIEW (
+			   #{compCd}
+			  ,#{branchPlant}
+			  ,#{lineType}
+			  ,#{itmNm}
+			  ,#{itmNo}
+			  ,#{itmTypeNo}
+			  ,#{wonbuCategoryId1}
+			  ,#{wonbuCategoryId2}
+			  ,#{wonbuCategoryId3}
+			  ,#{stIdx}
+			  ,#{edIdx}
+			 )
+		}
+	</select>
+
+	<select id="SP_ITM_NEW_VIEW_COUNT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_NEW_VIEW_COUNT (
+			   #{compCd}
+			  ,#{branchPlant}
+			  ,#{lineType}
+			  ,#{itmNm}
+			  ,#{itmNo}
+			  ,#{itmTypeNo}
+			  ,#{wonbuCategoryId1}
+			  ,#{wonbuCategoryId2}
+			  ,#{wonbuCategoryId3}
+			 )
+		}
+	</select>
+
+	<select id="SP_ITM_NEW_BU_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_NEW_BU_VIEW (
+			   #{compCd}
+			 )
+		}
+	</select>
+
+<!-- 	<select id="SP_ITM_ERP_ADD_SYNC" parameterType="com.syds.tops.itm.vo.ItmVO" resultType="com.syds.tops.itm.vo.ItmVO" statementType="CALLABLE"> -->
+	<select id="SP_ITM_ERP_ADD_SYNC" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_ERP_ADD_SYNC
+			(
+				#{searchCompCd, mode=IN, jdbcType=NVARCHAR},
+				#{searchShortItemNo, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<!-- 기초유화 마스터 정보를 등록 -->
+	<select id="SP_ITM_MM_MASTER_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_MM_MASTER_SELECT
+			(
+				#{itmNm, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_TOPS_ITM_MM_MGT2_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_ITM_MM_MGT2_VIEW
+			(
+				#{MGT_DT, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_TOPS_ITM_MM_MGT_DETAIL_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_ITM_MM_MGT_DETAIL_VIEW
+			(
+				#{MGT_DT, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_TOPS_ITM_MM_MGT_CHECK" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_ITM_MM_MGT_CHECK
+			(
+				#{MGT_DT, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_ITM_MM_MASTER_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_MM_MASTER_VIEW
+			(
+				#{idx, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_ITM_MM_MASTER_MAX" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_MM_MASTER_MAX()
+		}
+	</select>
+
+
+		<select id="SP_ITM_MM_CATE_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_MM_CATE_SELECT()
+		}
+	</select>
+
+	<select id="SP_ITM_MM_CATE_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_MM_CATE_VIEW(#{mmIdx, mode=IN, jdbcType=NVARCHAR})
+		}
+	</select>
+
+	<select id="SP_ITM_MM_ITEM_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_MM_ITEM_VIEW(#{mmIdx, mode=IN, jdbcType=NVARCHAR})
+		}
+	</select>
+
+
+
+
+
+	<select id="SP_ITM_MM_ITM_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_MM_ITM_SELECT
+			(
+				#{categoryId1, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId2, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId3, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+
+
+	<insert id="SP_ITM_MM_MASTER_SAVE" parameterType="hashmap" statementType="CALLABLE">
+	 {
+        call SP_ITM_MM_MASTER_SAVE
+        (
+			#{IDX}
+			,#{itmNm}
+			,#{prcCndt}
+			,#{wonUnit}
+			,#{grade}
+			,#{bigo}
+			,#{inputEmpNo}
+			,#{delYn}
+			,#{maker}
+			,#{orderSeq}
+			,#{OUT_IDX,mode=OUT, jdbcType=NVARCHAR}
+        )
+    }
+	</insert>
+
+	<insert id="SP_ITM_MM_CATEGORY_SAVE" parameterType="hashmap" statementType="CALLABLE">
+	 {
+        call SP_ITM_MM_CATEGORY_SAVE
+        (
+			 #{MODE}
+			,#{MM_IDX}
+			,#{CATEGORY_ID1}
+			,#{CATEGORY_ID2}
+			,#{CATEGORY_ID3}
+        )
+    }
+	</insert>
+
+	<insert id="SP_ITM_MM_ITEM_SAVE" parameterType="hashmap" statementType="CALLABLE">
+	 {
+        call SP_ITM_MM_ITEM_SAVE
+        (
+			 #{MODE}
+			,#{MM_IDX}
+			,#{itmIdx}
+			,#{comCd}
+			,#{compNm}
+			,#{itmMasterSeq}
+			,#{itmSeq}
+			,#{buItmNo}
+			,#{itmNm}
+			,#{specStandard}
+			,#{uomPurchasing}
+			,#{shortItemNo}
+			,#{scndItemNo}
+			,#{thirdItemNo}
+			,#{wonbuCategoryId1}
+			,#{CATEGORY_NM1}
+			,#{wonbuCategoryId2}
+			,#{CATEGORY_NM2}
+			,#{wonbuCategoryId3}
+			,#{CATEGORY_NM3}
+        )
+    }
+	</insert>
+
+	<delete id="SP_ITM_MM_CATEGORY_DELETE" parameterType="hashmap" statementType="CALLABLE">
+	{
+		call SP_ITM_MM_CATEGORY_DELETE (#{IDX})
+	}
+	</delete>
+
+	<select id="SP_ITM_MM_MASTER_DATA_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_MM_MASTER_DATA_SELECT( #{MODE} , #{shStDt} , #{shEdDt} , #{shType} )
+		}
+	</select>
+
+	<select id="SP_ITM_MM_MASTER_ITMLIST_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_MM_MASTER_ITMLIST_SELECT( #{itms} )
+		}
+	</select>
+
+	<insert id="SP_TOPS_ITM_MM_MGT_SAVE" parameterType="hashmap" statementType="CALLABLE">
+		{
+			call SP_TOPS_ITM_MM_MGT_SAVE (
+				 #{MODE, mode=IN, jdbcType=NVARCHAR}
+	            ,#{MGT_DT, mode=IN, jdbcType=NVARCHAR}
+	            ,#{MGT_YEAR, mode=IN, jdbcType=NVARCHAR}
+	            ,#{MGT_WEEK, mode=IN, jdbcType=INTEGER}
+	            ,#{MM_IDX, mode=IN, jdbcType=NVARCHAR}
+	            ,#{SPOT, mode=IN, jdbcType=DECIMAL}
+	            ,#{SPOT_ADD, mode=IN, jdbcType=NVARCHAR}
+	            ,#{MGT_IDX, mode=IN, jdbcType=INTEGER}
+	            ,#{MGT_IDX_OUT, mode=OUT, jdbcType=INTEGER}
+	        )
+		}
+	</insert>
+
+	<insert id="SP_TOPS_ITM_MM_MGT2_SAVE" parameterType="hashmap" statementType="CALLABLE">
+		{
+			call SP_TOPS_ITM_MM_MGT2_SAVE (
+				 #{MODE, mode=IN, jdbcType=NVARCHAR}
+	            ,#{MGT_DT, mode=IN, jdbcType=NVARCHAR}
+	            ,#{MGT_YEAR, mode=IN, jdbcType=NVARCHAR}
+	            ,#{MGT_WEEK, mode=IN, jdbcType=INTEGER}
+	            ,#{MM_IDX, mode=IN, jdbcType=NVARCHAR}
+	            ,#{SPOT, mode=IN, jdbcType=DECIMAL}
+	            ,#{SPOT_ADD, mode=IN, jdbcType=NVARCHAR}
+	            ,#{MGT_IDX, mode=IN, jdbcType=INTEGER}
+	            ,#{MGT_IDX_OUT, mode=OUT, jdbcType=INTEGER}
+	        )
+		}
+	</insert>
+
+	<insert id="SP_TOPS_ITM_MM_MGT_DETAIL_SAVE" parameterType="hashmap" statementType="CALLABLE">
+		{
+			call SP_TOPS_ITM_MM_MGT_DETAIL_SAVE (
+				 #{MGT_DT}
+	            ,#{MGT_YEAR}
+	            ,#{MGT_WEEK}
+	            ,#{CRCD}
+	            ,#{BIGO}
+	            ,#{MODE}
+	            )
+		}
+	</insert>
+
+
+	<select id="SP_TOPS_SRM_VERSION_LIST" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_VERSION_LIST
+			(
+				 #{categoryId3, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId2, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId1, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_TOPS_SRM_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_VIEW
+			(
+				 #{categoryId3, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId2, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId1, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+		<select id="SP_TOPS_SRM_VERSION_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_VERSION_VIEW
+			(
+				 #{idx, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_TOPS_SRM_CURRT_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_CURRT_VIEW
+			(
+				#{idx, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_TOPS_SRM_SUP_VIEW" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_SUP_VIEW
+			(
+				#{idx, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_TOPS_SRM_CATEGORY_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_CATEGORY_SELECT
+			(
+				#{categoryId1, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId2, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId3, mode=IN, jdbcType=NVARCHAR}
+				,#{year, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<insert id="SP_TOPS_SRM_SAVE" parameterType="hashmap" statementType="CALLABLE">
+		{
+			call SP_TOPS_SRM2_SAVE (
+				 #{idx, mode=IN, jdbcType=NVARCHAR}
+	            ,#{empNo, mode=IN, jdbcType=NVARCHAR}
+	            ,#{marketTrend, mode=IN, jdbcType=NVARCHAR}
+	            ,#{assayer, mode=IN, jdbcType=NVARCHAR}
+	            ,#{currTrand, mode=IN, jdbcType=NVARCHAR}
+	            ,#{simulTrand, mode=IN, jdbcType=NVARCHAR}
+	            ,#{categoryId3, mode=IN, jdbcType=INTEGER}
+	            ,#{categoryId2, mode=IN, jdbcType=INTEGER}
+	            ,#{categoryId1, mode=IN, jdbcType=INTEGER}
+	            ,#{stDt, mode=IN, jdbcType=NVARCHAR}
+	            ,#{edDt, mode=IN, jdbcType=NVARCHAR}
+<!-- 	            ,#{shortItmNo, mode=IN, jdbcType=NVARCHAR} -->
+<!-- 	            ,#{thirdItmNo, mode=IN, jdbcType=NVARCHAR} -->
+	            ,#{buItmNo, mode=IN, jdbcType=NVARCHAR}
+	            ,#{itmNm, mode=IN, jdbcType=NVARCHAR}
+	            ,#{outIdx, mode=OUT, jdbcType=INTEGER}
+	        )
+		}
+	</insert>
+
+	<insert id="SP_TOPS_SRM_CURRT_SAVE" parameterType="hashmap" statementType="CALLABLE">
+		{
+			call SP_TOPS_SRM_CURRT_SAVE (
+				 #{idx, mode=IN, jdbcType=INTEGER}
+	            ,#{vesionIdx, mode=IN, jdbcType=INTEGER}
+	            ,#{useText, mode=IN, jdbcType=NVARCHAR}
+	            ,#{content, mode=IN, jdbcType=NVARCHAR}
+	            ,#{delyn, mode=IN, jdbcType=NVARCHAR}
+	        )
+		}
+	</insert>
+
+
+	<insert id="SP_TOPS_SRM_SUP_SAVE" parameterType="hashmap" statementType="CALLABLE">
+		{
+			call SP_TOPS_SRM_SUP_SAVE (
+				 #{idx, mode=IN, jdbcType=INTEGER}
+	            ,#{vesionIdx, mode=IN, jdbcType=INTEGER}
+	            ,#{supId, mode=IN, jdbcType=NVARCHAR}
+	            ,#{supNm, mode=IN, jdbcType=NVARCHAR}
+	            ,#{supType, mode=IN, jdbcType=NVARCHAR}
+	            ,#{supBigo, mode=IN, jdbcType=NVARCHAR}
+	            ,#{delyn, mode=IN, jdbcType=NVARCHAR}
+	        )
+		}
+	</insert>
+
+	<insert id="SP_TOPS_SRM_VERSION_SAVE" parameterType="hashmap" statementType="CALLABLE">
+		{
+			call SP_TOPS_SRM_VERSION_SAVE (
+				 #{idx, mode=IN, jdbcType=INTEGER}
+	            ,#{empNo, mode=IN, jdbcType=INTEGER}
+	        )
+		}
+	</insert>
+
+
+	<select id="SP_TOPS_SRM_TOTAL_AMT_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_TOTAL_AMT_SELECT(
+				 #{categoryId1, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId2, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId3, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_TOPS_SRM_TOTAL_CHART1_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_TOTAL_CHART1_SELECT
+			(
+				#{categoryId1, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId2, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId3, mode=IN, jdbcType=NVARCHAR}
+				,#{year, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+
+	<select id="SP_TOPS_SRM_TOTAL_CHART2_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_TOTAL_CHART2_SELECT
+			(
+				#{categoryId1, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId2, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId3, mode=IN, jdbcType=NVARCHAR}
+				,#{year, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+
+	<select id="SP_TOPS_SRM_TOTAL_CHART3_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_TOTAL_CHART3_SELECT
+			(
+				#{stDt, mode=IN, jdbcType=NVARCHAR}
+				,#{edDt, mode=IN, jdbcType=NVARCHAR}
+				,#{buItmNo, mode=IN, jdbcType=NVARCHAR}
+				
+<!-- 				,#{shortItmNo, mode=IN, jdbcType=NVARCHAR} -->
+<!-- 				,#{thirdItmNo, mode=IN, jdbcType=NVARCHAR} -->
+			)
+		}
+	</select>
+
+
+	<select id="SP_TOPS_SRM_ITM_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_TOPS_SRM_ITM_SELECT
+			(
+				 #{categoryId3, mode=IN, jdbcType=NVARCHAR}
+				,#{categoryId2, mode=IN, jdbcType=NVARCHAR}
+			 	,#{categoryId1, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+
+	<select id="SP_ITM_TYPE_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITM_TYPE_SELECT
+			(
+				#{cdGubn}, #{ap1}
+			)
+		}
+	</select>
+
+	<select id="SP_ITEM_LIST" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_ITEM_LIST 
+			(
+				#{sUseComp}
+				, #{sUseBu}
+				, #{sUseCp}
+				, #{sBuItmNo}
+				, #{sItmNm}
+				, #{sMaterialType}
+			)
+		}
+	</select>
+
+	<insert id="SP_CONT_ITEM_SAVE" parameterType="hashmap" statementType="CALLABLE">
+		{
+			call SP_CONT_ITEM_SAVE 
+			(
+				#{itmNo, mode=IN, jdbcType=NVARCHAR},
+				#{useComp, mode=IN, jdbcType=NVARCHAR},
+				#{useBu, mode=IN, jdbcType=NVARCHAR},
+				#{plantCd, mode=IN, jdbcType=NVARCHAR},
+				#{contSupId, mode=IN, jdbcType=INTEGER},
+				#{contItmFg, mode=IN, jdbcType=NVARCHAR},
+				#{contFrDt, mode=IN, jdbcType=NVARCHAR},
+				#{contToDt, mode=IN, jdbcType=NVARCHAR},
+				#{inputEmpNo, mode=IN, jdbcType=NVARCHAR},
+				#{totQty, mode=IN, jdbcType=NUMERIC},
+				#{qtyLimitYn, mode=IN, jdbcType=NVARCHAR},
+				#{contItmPrice, mode=IN, jdbcType=NUMERIC},
+				#{contItmPriceChangeYn, mode=IN, jdbcType=NVARCHAR},
+				#{payTermsCd, mode=IN, jdbcType=NVARCHAR},
+				#{deliveryTerms, mode=IN, jdbcType=NVARCHAR},
+				#{deliveryTermsArea, mode=IN, jdbcType=NVARCHAR}
+	        )
+		}
+	</insert>
+	
+	<select id="selectJdeErpItm" parameterType="hashmap" resultType="hashmap">
+		{
+			call SP_JDE_ERP_ITM_SELECT(
+				#{buItmNo, mode=IN, jdbcType=NVARCHAR}
+				, #{buItmNm, mode=IN, jdbcType=NVARCHAR}
+				, #{shortItemNo, mode=IN, jdbcType=NVARCHAR}
+				, #{scndItemNo, mode=IN, jdbcType=NVARCHAR}
+				, #{thirdItemNo, mode=IN, jdbcType=NVARCHAR}
+				, #{jdeItmNm, mode=IN, jdbcType=NVARCHAR}
+				, #{jdeSpec, mode=IN, jdbcType=NVARCHAR}
+			)
+		}
+	</select>
+	
+	<select id="SP_INVTYPE_SELECT" parameterType="hashmap" resultType="hashmap">
+		{
+		 	call SP_INVTYPE_SELECT
+		}
+	</select>
+</mapper>
