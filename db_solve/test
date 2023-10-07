@@ -6,8 +6,8 @@ WHERE a.TOTAL_ORDER > 3000 AND b.INGREDIENT_TYPE LIKE 'fruit_based'
 ORDER BY a.TOTAL_ORDER DESC;
 
 function fn_CategoryAndFunCaseCheck(type) {
-		if ('${rfxAward.rptUserDp}' == 110011022) { //원부원료팀 체크
-			var checkTemp = []; //선정하려는 물품구매 건의 품목
+		if ('${rfxAward.rptUserDp}' == 110011022) {
+			var checkTemp = [];
 			var checkItmNos = ''; //쿼리에서 편하게 처리하기 위해 ','구분자로 품목아이디를 담는 변수
 
 			var emptyCategorys = []; //카테고리 없는 품목 no 채번
