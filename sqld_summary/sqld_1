@@ -634,7 +634,7 @@ GROUPING
 CUBE
 - 결합 가능한 모든 값에 대하여 다차원 집계를 생성
 - ROLLUP에 비해 시스템에 부하 심함
-- 2^N CUBE(A, B) = GROUPING SETS(A, B, (A,B), ())
+- 2^N CUBE(A, B) = GROUPING SETS(A, B, (A,B ), ())
 
 GROUPING SETS
 - 인수들에 대한 개별 집계를 구할수 있다
