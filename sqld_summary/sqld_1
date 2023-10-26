@@ -453,7 +453,7 @@ NULL 관련 함수(NULL은 0 또는 공백 아님)
 - NBL(식1, 식2) : 식1의 값이 NULL 이면 식2 출력, 공집합을 바꿔주진 않음
 - NULLIF(식1, 식2) : 식1이 식2와 같으면 NULL을 아니면 식1을 출력
 - COALESCE(식1, 식2) : NULL이 아닌 최초의 표현식, 모두 NULL 이면 NULL 반환
-- e.g. COALESCE(NULL, NULL, 'abc') -> 'abc'
+- ex) COALESCE(NULL, NULL, 'abc') -> 'abc'
 
 다중행 집계 함수
 - 여러 행들의 그룹이 모여서 그룹당 단 하나의 결과를 돌려주는 함수이다
