@@ -404,3 +404,4 @@ OUTER JOIN
 
 그룹함수
 - ROLLUP : 인수 계층구조, 인수순서 바뀌면 수행 결과도 바뀌게 된다. 컬럼 수 = N -> N + 1 LEVEL의 SUBTOTAL이 생성
+
