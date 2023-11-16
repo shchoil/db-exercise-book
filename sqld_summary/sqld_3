@@ -79,3 +79,9 @@ DENSE_RANK()
 
 ROW_NUMBER()
 - 중복값이 있어도 고유 등수 부여(1, 2, 3, 4)
+
+ROLLUP : 인수 순서중요(계층적), Order by 로 정렬
+
+CUBE : 모든값에 다차원집계 생성 / 시스템에 많은 부하
+
+GroupingSets : 인수 순서무관 (평등)
